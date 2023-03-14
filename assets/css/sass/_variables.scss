@@ -1,0 +1,67 @@
+$ltr: 'html[lang="en"]';
+$rtl: 'html[lang="ar"]';
+/*********************************************************
+  // global color variables
+**********************************************************/
+
+// colors
+$dark: #505052;
+$dark2: #302F2F;
+$blue: #2D2E83;
+$blue2: #1D71B8;
+$red: #CC0000;
+$green: #A26F2D;
+$yellow: #C49E58;
+$yellow2: #DDAD16;
+$white: #fff;
+$white2: #E5E5E5;
+$white3: #FAFAFA;
+$black: #202020;
+$black2: #161616;
+$black3: #7b7b7b;
+$light: #5E5E5E;
+$light2: #EEECE6;
+$light3: #89877e;
+$light4: #F5F5F5;
+$light5: #6c757d;
+$border-color: #D9D9D9;
+$placholder-color: #adabab;
+$icon-color: #b1b0b0;
+$side-color: #939393;
+$gold: #FAEA9C;
+$gold2: #FFC107;
+$gold3: #FECC2F;
+$main-shadow: 0 1px 10px rgb(0 0 0 / 10%);
+$sec-shadow: 0 1px 3px rgb(0 0 0 / 4%);
+$side-shadow: 0 2px 5px rgb(0 0 0 / 5%);
+$nav-shadow: 0 3px 16px rgb(133 133 133 / 5%);
+$text-shadow: 0 2px 2px rgba($color: $dark, $alpha: .1);
+$main-transition: all .3s ease;
+
+
+/*********************************************************
+  // Font variables
+**********************************************************/
+
+$font-normal: 'HSDream-Light', sans-serif, 'Font Awesome 5 Free';
+
+/*********************************************************
+  // spacing variables
+**********************************************************/
+// these variable/s is still not applied on all elements
+
+$space-between: 20px;
+$spacer: 10px;
+
+/*********************************************************
+  // screens
+**********************************************************/
+$screen-xxl: 1720px;
+$screen-xx: 1600px;
+$screen-xl: 1280px;
+$screen-lg2: 1200px;
+$screen-lg: 992px;
+$screen-md: 768px;
+$screen-sm: 576px;
+$screen-xs: 425px;
+$screen-xxs: 375px;
