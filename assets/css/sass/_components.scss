@@ -176,15 +176,10 @@
 
 // Section Title
 .section-title{
-  text-align: center;
-  margin-bottom: 35px;
-  font-size: 23px;
-  color: $dark;
-
-  @media screen and (max-width:$screen-sm) {
-    font-size: 19px;
-    margin-bottom: 18px;
-  }
+  margin-bottom: 20px;
+  font-size: 17px;
+  color: $black;
+  font-family: fontDemi;
 }
 
 // Page Title
@@ -503,7 +498,7 @@
   z-index: 10;
 
   .step-item {
-    min-width: 145px;
+    min-width: 180px;
     max-width: 100%;
     display: flex;
     flex-direction: column;
@@ -528,7 +523,7 @@
       top: 9px;
       @include dir-left(0);
       width: 100%;
-      border: 1px dashed $blue2;
+      border: 1px dashed $light4;
       #{$ltr} & {
         transform: translateX(-50%);
       }
@@ -539,32 +534,20 @@
     }
 
     .progress-count {
-      @include circle(20px);
+      @include circle(18px);
       @include center;
       margin: 0 auto;
       position: relative;
       z-index: 10;
-      background: $blue2;
-
-        &:before {
-          content: "";
-          height: 5px;
-          width: 10px;
-          border-left: 2px solid #fff;
-          border-bottom: 2px solid #fff;
-          position: absolute;
-          left: 50%;
-          top: 50%;
-          transform: translate(-50%, -60%) rotate(-45deg);
-          transform-origin: center center;
-        }
+      background-color: $white;
+      border: 2px solid $border-color;
     }
 
     .progress-label {
-      font-size: 14px;
-      font-family: fontDemi;
-      color: $black;
-      margin-top: 8px;
+      font-size: 15px;
+      margin-top: 14px;
+      color: $light;
+      font-family: fontMed;
 
       @media screen and (max-width:$screen-sm) {
         font-size: 13px;
@@ -575,35 +558,17 @@
       }
     }
 
-    &.current-item {
-
-      & ~ .step-item{
-        &:after{
-          border-color: $light4;
-        }
-
-        .progress-count {
-          background-color: $white;
-          border: 1px solid $border-color;
-
-          &:before{
-            display: none;
-          }
-        }
-
-        .progress-label {
-          color: $light5;
-          font-family: fontMed;
-        }
-      }
+    &.active {
 
       .progress-count {
-        border: 3px solid $white;
-        box-shadow: $main-shadow;
+        outline: 3px solid rgba($color:$yellow, $alpha: .2);
+        background-color: $yellow;
+        border: none;
+      }
 
-        &:before{
-          display: none;
-        }
+      .progress-label{
+        font-family: fontDemi;
+        color: $black;
       }
 
     }
@@ -634,7 +599,7 @@
       color: $black;
 
       #{$ltr} & {
-        transform: rotateY(-90deg);
+        transform: rotateY(-180deg);
       }
     }
   }
@@ -755,13 +720,18 @@
 
     &.transparent{
       background-color: $white;
-      color: $blue2;
-      border-color: $blue2;
+      color: $dark;
+      border-color: $dark;
 
       &:hover{
-        background-color: $blue2;
+        background-color: $dark;
         color: #fff;
       }
+    }
+
+    &.linear{
+      background: -webkit-linear-gradient($green, $gold);
+      border: none;
     }
 
     &.sm{
@@ -982,11 +952,19 @@
 }
 
 .fs-22{
-  font-size: 26px;
+  font-size: 22px !important;
+}
+
+.fs-24{
+  font-size: 24px !important;
 }
 
 .ff-d{
-  font-family: fontDemi;
+  font-family: fontDemi !important;
+}
+
+.ff-b{
+  font-family: fontBold !important;
 }
 
 .remove-append{
@@ -1032,6 +1010,11 @@
 
 .sec-padding{
   padding: 25px 0;
+}
+
+.px-7{
+  padding-left: 4.5rem!important;
+  padding-right: 4.5rem!important;
 }
 
 .section-style{
@@ -1101,6 +1084,25 @@
       }
     }
   }
+}
+
+.store-img-squer{
+  width: 160px;
+  height: 155px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.img-container{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.main-img{
+  width: 125px;
+  height: 135px;
+  object-fit: cover;
 }
 
 .flag-img{
@@ -1374,6 +1376,15 @@
 
 .height-full{
   height: 100%;
+}
+
+.remove-product{
+  position: absolute;
+  top: 16px;
+  @include dir-right(15px);
+  cursor: pointer;
+  color: $black;
+  font-size: 18px;
 }
 
 .star{
@@ -1663,19 +1674,20 @@
 .number-input{
   @include center;
   gap: 8px;
-  border: 1px solid $light;
   border-radius: 5px;
-  width: 100px;
-  height: 42px;
+  width: fit-content;
+  padding: 2px;
   
-  @media screen and (max-width:$screen-xs) {
-    height: 40px;
-  }
+  background-color: $white;
+
+  // @media screen and (max-width:$screen-xs) {
+  //   height: 40px;
+  // }
 
   input{
-    color: $light;
+    color: $black;
     font-size: 16px;
-    width: 25px;
+    width: 40px;
     text-align: center;
 
     @media screen and (max-width:$screen-xs) {
@@ -1684,11 +1696,24 @@
   }
   .btn-num{
     font-size: 16px;
-    color: $blue2;
     cursor: pointer;
+    width: 40px;
+    height: 40px;
+    @include center;
+    border-radius: 5px;
     
     @media screen and (max-width:$screen-xs) {
       font-size: 15px;
+    }
+
+    &.plus{
+      background-color: $green;
+      color: $white;
+    }
+
+    &.minus{
+      background-color: $border-color;
+      color: $light;
     }
   }
 }
@@ -1900,15 +1925,15 @@
     line-height: 1;
     display: flex;
     align-items: center;
-    margin-bottom: 8px;
+    margin-bottom: 12px;
     gap: 22px;
-    color: $blue2;
+    color: $yellow;
     font-family: fontDemi;
-    font-size: 14px;
+    font-size: 16px;
   }
 
   .bottom{
-    font-size: 13px;
+    font-size: 14px;
     color: $light5
   }
 }
@@ -2327,6 +2352,12 @@
       }
     }
   }
+}
+
+.modal-img-p{
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
 }
 
 /********************* Accordion *********************/

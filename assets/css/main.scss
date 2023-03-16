@@ -121,6 +121,14 @@
 // cards-container
 .cards-container{
     @include grid(280px, 35px);
+    
+    &.sm{
+        @include grid(200px, 25px);
+    }
+    
+    &.lg{
+        @include grid(300px, 35px);
+    }
 }
 
 // Store Card
@@ -333,6 +341,10 @@
         height: 300px;
         margin-bottom: 10px;
         overflow: hidden;
+
+        &.sm{
+            height: 230px;
+        }
 
         .card-img-m{
             width: 100%;
@@ -591,7 +603,7 @@
 
 // grid-boxs
 .grid-boxs{
-    @include grid(350px, 25px)
+    @include grid(350px, 25px);
 }
 
 .link-box{
@@ -627,5 +639,60 @@
         .box-img{
             transform: scale(1.14) rotate(-2deg);
         }
+    }
+}
+
+
+// Code Inputs
+.code-inputs{
+    .main-input{
+        position: relative;
+
+        .input-me{
+            min-height: 44px !important;
+        }
+
+        .main-btn{
+            position: absolute;
+            top: 50%;
+            @include dir-right(5px);
+            transform: translateY(-50%);
+            height: 36px;
+            width: 100px;
+            font-size: 13px;
+        }
+    }
+
+    &.lg{
+        .main-input{
+    
+            .input-me{
+                min-height: 48px !important;
+            }
+    
+            .main-btn{
+                height: 48px;
+            }
+        }
+    }
+}
+
+
+// order-item
+.order-item{
+    @include between;
+    margin-bottom: 15px;
+
+    &:last-child{
+        margin-bottom: 0;
+    }
+
+    .sec-text{
+        font-size: 16px;
+        font-family: fontDemi;
+    }
+
+    .price{
+        font-family: fontDemi;
     }
 }
