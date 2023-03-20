@@ -334,7 +334,7 @@ input:focus {
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.7);
   display: none;
-  z-index: 888;
+  z-index: 1030;
 }
 
 .big-title {
@@ -413,38 +413,51 @@ input:focus {
   margin-top: 14px;
 }
 
-.filter-search {
-  width: 350px;
+.search-table-con {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
 }
-@media screen and (max-width: 768px) {
-  .filter-search {
-    width: 280px;
-  }
+.search-table-con .search-table {
+  position: relative;
 }
-@media screen and (max-width: 576px) {
-  .filter-search {
-    width: 220px;
-  }
+.search-table-con .search-table .search-input {
+  width: 400px;
 }
-@media screen and (max-width: 425px) {
-  .filter-search {
-    width: 100%;
-  }
+.search-table-con .search-table .search-select {
+  width: 140px;
 }
-.filter-search.input-g {
-  margin-bottom: 0;
+.search-table-con .search-table .search-style {
+  padding: 6px 12px;
+  min-height: 40px;
+  border: 1px solid #202020;
+  background-color: #fff;
+  border-radius: 5px;
 }
-.filter-search .input-me {
-  min-height: 42px !important;
+.search-table-con .search-table .search-style::-moz-placeholder {
+  font-size: 13px;
+  color: #202020;
 }
-.filter-search .main-icon {
+.search-table-con .search-table .search-style::placeholder {
+  font-size: 13px;
+  color: #202020;
+}
+.search-table-con .search-table .search-submit {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
   background-color: transparent;
+  padding: 0;
+  color: #202020;
+  font-size: 13px;
+  cursor: pointer;
 }
-html[lang=en] .filter-search .main-icon {
-  right: 8px !important;
+html[lang=en] .search-table-con .search-table .search-submit {
+  right: 12px;
 }
-html[lang=ar] .filter-search .main-icon {
-  left: 8px !important;
+html[lang=ar] .search-table-con .search-table .search-submit {
+  left: 12px;
 }
 
 .dropdown-m-container {
@@ -1569,6 +1582,16 @@ html[lang=en] .remove-product {
 }
 html[lang=ar] .remove-product {
   left: 15px;
+}
+
+.delete-filter {
+  font-size: 16px;
+  color: #CC0000;
+  font-family: fontDemi;
+  background-color: transparent;
+  padding: 0;
+  display: block;
+  margin: 15px auto 0;
 }
 
 .star {
@@ -3927,4 +3950,86 @@ html[lang=ar] .code-inputs .main-input .main-btn {
 }
 .order-item .price {
   font-family: fontDemi;
+}
+
+.filter-bar {
+  position: fixed;
+  top: 0;
+  width: 380px;
+  background-color: #fff;
+  padding: 35px;
+  height: 100%;
+  z-index: 1040;
+  transform: translateX(-105%);
+  transition: all 0.7s cubic-bezier(0.55, -0.3, 0.265, 1.5);
+  overflow: auto;
+}
+html[lang=en] .filter-bar {
+  left: 0;
+}
+html[lang=ar] .filter-bar {
+  right: 0;
+}
+html[lang=en] .filter-bar {
+  transform: translateX(-105%);
+}
+html[lang=ar] .filter-bar {
+  transform: translateX(105%);
+}
+.filter-bar.active {
+  transform: translateX(0) !important;
+}
+.filter-bar::-webkit-scrollbar {
+  width: 4px;
+}
+.filter-bar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.filter-bar::-webkit-scrollbar-thumb {
+  border-radius: 25px;
+  background-color: #505052;
+}
+.filter-bar .filter-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 35px;
+}
+.filter-bar .filter-head .title {
+  font-size: 18px;
+  color: #202020;
+  font-family: fontDemi;
+}
+.filter-bar .filter-head .close-filter {
+  cursor: pointer;
+  font-size: 18px;
+  color: #202020;
+}
+.filter-bar .filter-coll-container {
+  padding: 0 20px;
+}
+.filter-bar .filter-collapse {
+  display: block;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #D9D9D9;
+}
+.filter-bar .filter-collapse .filter-coll-open {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 15px;
+  font-family: fontDemi;
+  color: #202020;
+  cursor: pointer;
+  margin-bottom: 8px;
+}
+.filter-bar .filter-collapse .filter-coll-open i {
+  transition: all 0.3s ease;
+}
+.filter-bar .filter-collapse .filter-coll-content {
+  padding: 12px 0;
+}
+.filter-bar .filter-collapse.active .filter-coll-open i {
+  transform: rotateX(180deg);
 }/*# sourceMappingURL=main.css.map */

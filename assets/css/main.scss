@@ -696,3 +696,97 @@
         font-family: fontDemi;
     }
 }
+
+
+// filter-bar
+.filter-bar{
+    position: fixed;
+    top: 0;
+    @include dir-left(0);
+    width: 380px;
+    background-color: $white;
+    padding: 35px;
+    height: 100%;
+    z-index: 1040;
+    transform: translateX(-105%);
+    #{$ltr} & {
+        transform: translateX(-105%);
+    }
+    #{$rtl} & {
+        transform: translateX(105%);
+    }
+    transition: all .7s cubic-bezier(0.55, -0.30, 0.265, 1.5);
+    overflow: auto;
+
+    &.active{
+        transform: translateX(0) !important;
+    }
+
+
+    &::-webkit-scrollbar {
+        width: 4px;
+    }
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+        border-radius: 25px;
+        background-color: $dark;
+    }
+
+    .filter-head{
+        @include between;
+        margin-bottom: 35px;
+
+        .title{
+            font-size: 18px;
+            color: $black;
+            font-family: fontDemi;
+        }
+
+        .close-filter{
+            cursor: pointer;
+            font-size: 18px;
+            color: $black;
+        }
+    }
+
+    .filter-coll-container{
+        padding: 0 20px;
+    }
+
+    .filter-collapse{
+        display: block;
+        margin-bottom: 15px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid $border-color;
+
+        .filter-coll-open{
+            @include between;
+            font-size: 15px;
+            font-family: fontDemi;
+            color: $black;
+            cursor: pointer;
+            margin-bottom: 8px;
+    
+            i{
+                transition: $main-transition;
+            }
+    
+        }
+
+        .filter-coll-content{
+            padding: 12px 0;
+            // display: none;
+        }
+
+        &.active {
+            .filter-coll-open{
+                i{
+                transform: rotateX(180deg);
+                }
+            }
+        }
+    }
+
+}
