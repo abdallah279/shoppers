@@ -790,3 +790,27 @@
     }
 
 }
+
+
+// product-detailes
+.product-detailes{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    .product-head{
+        font-size: 19px;
+        font-family: fontBold;
+    }
+}
+
+.carsouel{
+    height: 530px;
+
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+}

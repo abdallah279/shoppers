@@ -173,12 +173,12 @@ $(document).ready(function() {
 });
 
 // Heart
-$('.heart').on('click', function(){
+$(document).on('click', '.heart' ,function(){
   if($(this).find('i').hasClass('fa-regular')){
+    $(this).find('i').addClass('fa-solid yellow')
     $(this).find('i').removeClass('fa-regular')
-    $(this).find('i').addClass('fa-solid')
   } else{
-    $(this).find('i').removeClass('fa-solid')
+    $(this).find('i').removeClass('fa-solid yellow')
     $(this).find('i').addClass('fa-regular')
   }
 })

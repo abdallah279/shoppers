@@ -405,16 +405,11 @@
     top: 50%;
     transform: translateY(-50%);
     color: $white !important;
-    border: 2px solid $white !important;
-    @include circle(44px);
+    background-color: $black !important;
+    @include circle(38px);
     @include center;
     cursor: pointer;
     transition: $main-transition;
-
-    &:hover{
-      background-color: $blue2 !important;
-      // border-color: $blue2 !important;
-    }
 
     @media screen and (max-width: $screen-lg) {
       display: none;
@@ -422,11 +417,13 @@
   }
 
   .owl-prev{
-    right: 7%;
+    // @include dir-left(1%)
+    right: 1%
   }
 
   .owl-next{
-    left: 7%;
+    // @include dir-right(1%);
+    left: 1%;
   }
 
 }
@@ -832,73 +829,27 @@
 }
 
 .sm-btn{
-  width: 42px;
-  height: 42px;
-  border-radius: 5px;
-  border: 1px solid $blue2;
-  color: $blue2;
-  font-size: 15px;
+  @include circle(50px);
+  color: $white;
+  font-size: 19px;
   @include center;
-  background-color: transparent;
+  background-color: $dark;
   outline: none;
   cursor: pointer;
   transition: $main-transition;
 
   @media screen and (max-width:$screen-xs) {
-    width: 40px;
-    height: 40px;
-    font-size: 14px;
+    @include circle(46px);
+    font-size: 15px;
   }
 
   .sm-btn-img{
-    max-width: 18px;
-    max-height: 18px;
-    transition: $main-transition;
-    
-    @media screen and (max-width:$screen-xs) {
-      max-width: 16px;
-      max-height: 16px;
-    }
+    max-width: 19px;
+    max-height: 19px;
   }
 
-  &.blue{
-    background-color: $blue2;
-    color: $white;
-    cursor: auto;
-  }
-
-  &.red{
-    border-color: $red;
-    color: $red;
-    // cursor: auto;
-
-    &:hover, &.active{
-      background-color: $red;
-      color: $white;
-    }
-  }
-
-  &.light{
-    border-color: transparent;
-    cursor: auto;
-    background-color: $white2;
-
-    &:hover, &.active{
-      background-color: $white2;
-      color: $blue2;
-      img{
-        filter: unset;
-      }
-    }
-  }
-
-  &:hover, &.active{
-    background-color: $blue2;
-    color: $white;
-
-    img{
-      filter: grayscale(100%) brightness(450%) sepia(100%) hue-rotate(956deg) saturate(1000%) contrast(0.8);
-    }
+  i.yellow{
+    color: $yellow;
   }
 }
 
@@ -1363,29 +1314,11 @@
 }
 
 .main-item{
+  font-size: 16px;
+  color: $light;
   display: flex;
-  align-items: center;
-  gap: 5px;
 }
 
-.main-item-first{
-  color: $light5;
-  font-size: 15px;
-
-  @media screen and (max-width:$screen-xs) {
-    font-size: 13px;
-  }
-}
-
-.main-item-secound{
-  color: $black;
-  font-size: 15px;
-  font-family: fontDemi;
-
-  @media screen and (max-width:$screen-xs) {
-    font-size: 13px;
-  }
-}
 
 .height-full{
   height: 100%;
