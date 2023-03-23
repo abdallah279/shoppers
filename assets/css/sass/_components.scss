@@ -837,7 +837,7 @@
   outline: none;
   cursor: pointer;
   transition: $main-transition;
-
+  flex-shrink: 0;
   @media screen and (max-width:$screen-xs) {
     @include circle(46px);
     font-size: 15px;
@@ -1238,6 +1238,8 @@
   font-size: 15px;
   text-decoration: underline;
   cursor: pointer;
+  background-color: transparent;
+  padding: 0;
 
   &.edit{
     color: $dark;
@@ -1599,6 +1601,10 @@
   @include center;
 }
 
+.select2-container--default .select2-results__option--highlighted.select2-results__option--selectable{
+  background-color: $white2;
+  color: $black;
+}
 
 .select2-results__options::-webkit-scrollbar {
   width: 4px;

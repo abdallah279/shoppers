@@ -1005,6 +1005,7 @@ html[lang=ar] .iti--allow-dropdown .iti__flag-container, html[lang=ar] .iti--sep
   outline: none;
   cursor: pointer;
   transition: all 0.3s ease;
+  flex-shrink: 0;
 }
 @media screen and (max-width: 425px) {
   .sm-btn {
@@ -1425,6 +1426,8 @@ html[lang=ar] .remove-append {
   font-size: 15px;
   text-decoration: underline;
   cursor: pointer;
+  background-color: transparent;
+  padding: 0;
 }
 .main-anchor.edit {
   color: #505052;
@@ -1799,6 +1802,11 @@ html[lang=en] .select2-container--default .select2-selection--multiple .select2-
 }
 html[lang=ar] .select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
   left: 4px !important;
+}
+
+.select2-container--default .select2-results__option--highlighted.select2-results__option--selectable {
+  background-color: #E5E5E5;
+  color: #202020;
 }
 
 .select2-results__options::-webkit-scrollbar {
@@ -3490,6 +3498,15 @@ html[lang=ar] .store-card .img-con .flag-con {
   gap: 25px 40px;
 }
 
+.categories-carousel .owl-stage-outer {
+  padding: 5px 0;
+}
+.categories-carousel .categories-item {
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: auto;
+}
+
 .categories-item {
   display: flex;
   align-items: center;
@@ -3993,4 +4010,72 @@ html[lang=ar] .filter-bar {
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 8px;
+}
+
+.oute-owl-product {
+  display: flex;
+  gap: 10px;
+  flex-direction: row-reverse;
+  overflow: hidden;
+}
+
+.owl-product {
+  border: 1px solid #EEE;
+  overflow: hidden;
+}
+.owl-product .owl-dots {
+  display: none;
+}
+
+.owl-product .item {
+  width: 100%;
+  height: 530px;
+  position: relative;
+}
+
+.owl-product img,
+.navigation-img-wrapper > div img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  background: #FFF;
+  border-radius: 6px;
+}
+
+.navigation-img-wrapper {
+  display: flex;
+  gap: 10px;
+  overflow: auto;
+  flex-direction: column;
+  flex-shrink: 0;
+  max-height: 530px;
+}
+.navigation-img-wrapper > div {
+  border: 1px solid transparent;
+  cursor: pointer;
+  opacity: 1;
+  transition: all 0.3s linear 0s;
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  min-height: 80px;
+  flex-shrink: 0;
+  padding: 3px;
+  border-radius: 6px;
+}
+.navigation-img-wrapper > div.active {
+  border-color: #202020;
+  background-color: #fff;
+}
+.navigation-img-wrapper::-webkit-scrollbar {
+  width: 6px;
+}
+.navigation-img-wrapper::-webkit-scrollbar-track {
+  background: transparent;
+}
+.navigation-img-wrapper::-webkit-scrollbar-thumb {
+  border-radius: 25px;
+  background-color: transparent;
 }/*# sourceMappingURL=main.css.map */

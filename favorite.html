@@ -420,7 +420,7 @@
                 <div class="col-xl-9 mx-auto">
                     <div class="filter-container mb-5">
     
-                        <div class="filter-btn">
+                        <div class="filter-btn show-filter">
                             فلتر حسب
                             <img src="assets/imgs/icons/filter.png" alt="">
                         </div>
@@ -779,6 +779,160 @@
     <div class="overlay-m"></div>
 
 
+    <!-- Filter Bar -->
+    <div class="filter-bar">
+        <div class="filter-head">
+            <span class="title">التصنيف</span>
+            <i class="fa-solid fa-xmark close-filter"></i>
+        </div>
+
+
+        <form action="">
+
+            <div class="filter-coll-container">
+    
+                <div class="filter-collapse active">
+                    <div class="filter-coll-open">
+                        الأقسام
+                        <i class="fa-solid fa-angle-down"></i>
+                    </div>
+                    <div class="filter-coll-content">
+                        <div class="check-boxs">
+    
+                            <div class="check-box">
+                                <input type="checkbox" name="" id="all">
+                                <label class="check" for="all"></label>
+                                <label class="check-text" for="all">
+                                    عقود ذهبية
+                                </label>
+                            </div>
+    
+                            <div class="check-box">
+                                <input type="checkbox" name="" id="mens">
+                                <label class="check" for="mens"></label>
+                                <label class="check-text" for="mens">
+                                    أساور ذهبية
+                                </label>
+                            </div>
+    
+                            <div class="check-box">
+                                <input type="checkbox" name="" id="femals">
+                                <label class="check" for="femals"></label>
+                                <label class="check-text" for="femals">
+                                    خواتم ذهبية
+                                </label>
+                            </div>
+    
+                            <div class="check-box">
+                                <input type="checkbox" name="" id="child">
+                                <label class="check" for="child"></label>
+                                <label class="check-text" for="child">
+                                    أقراط ذهبية
+                                </label>
+                            </div>
+    
+                            <div class="check-box">
+                                <input type="checkbox" name="" id="child1">
+                                <label class="check" for="child1"></label>
+                                <label class="check-text" for="child1">
+                                    ساعات ذهبية
+                                </label>
+                            </div>
+    
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="filter-collapse ">
+                    <div class="filter-coll-open">
+                        الماركات
+                        <i class="fa-solid fa-angle-down"></i>
+                    </div>
+                    <div class="filter-coll-content">
+                        <div class="check-boxs">
+    
+                            <div class="check-box">
+                                <input type="checkbox" name="" id="all2">
+                                <label class="check" for="all2"></label>
+                                <label class="check-text" for="all2">
+                                    كارتييه
+                                </label>
+                            </div>
+    
+    
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="filter-collapse ">
+                    <div class="filter-coll-open">
+                        الأسعار
+                        <i class="fa-solid fa-angle-down"></i>
+                    </div>
+                    <div class="filter-coll-content">
+                        <div class="check-boxs">
+    
+                            <div class="check-box">
+                                <input type="checkbox" name="" id="all3">
+                                <label class="check" for="all3"></label>
+                                <label class="check-text" for="all3">
+                                    أقل من 5000Rs
+                                </label>
+                            </div>
+    
+                            <div class="check-box">
+                                <input type="checkbox" name="" id="all23">
+                                <label class="check" for="all23"></label>
+                                <label class="check-text" for="all23">
+                                    أقل من 4000Rs
+                                </label>
+                            </div>
+    
+                            <div class="check-box">
+                                <input type="checkbox" name="" id="all4">
+                                <label class="check" for="all4"></label>
+                                <label class="check-text" for="all4">
+                                    أقل من 3000Rs
+                                </label>
+                            </div>
+    
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="filter-collapse ">
+                    <div class="filter-coll-open">
+                        التقييم
+                        <i class="fa-solid fa-angle-down"></i>
+                    </div>
+                    <div class="filter-coll-content">
+                        <div class="check-boxs">
+    
+                            <div class="check-box">
+                                <input type="checkbox" name="" id="all5">
+                                <label class="check" for="all5"></label>
+                                <label class="check-text star" for="all5">
+                                    <i class="fa-regular fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </label>
+                            </div>
+    
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+
+            <button type="submit" class="main-btn up md mx-auto mt-5">تأكيد</button>
+            <button type="button" class="delete-filter">امسح الكل</button>
+        </form>
+
+    </div>
+
+
 
 
     <!-- Start country Modal -->
@@ -923,7 +1077,43 @@
     <!-- fancybox -->
     <script src="./assets/plugins/FancyBox/jquery.fancybox.min.js"></script>
 
-    <!-- Home Slider -->
+    <!-- Filter Bar -->
+    <script>
+        $('.show-filter').on('click', function(){
+            $('.overlay-m').fadeIn(700);
+            $('.filter-bar').addClass('active');
+        })
+        
+        $('.close-filter').on('click', function(){
+            $('.overlay-m').fadeOut(700);
+            $('.filter-bar').removeClass('active');
+        })
+
+        $('.overlay-m').on('click', function(){
+            $('.overlay-m').fadeOut(700);
+            $('.filter-bar').removeClass('active');
+        })
+    </script>
+
+    <!-- Collapse -->
+    <script>
+        $(document).ready(function(){
+            $('.filter-collapse:not(.active) .filter-coll-content').slideUp()
+
+            $('.filter-coll-open').click(function(e){
+                e.preventDefault();
+                if($(this).parent('.filter-collapse').hasClass('active')){
+                    $(this).next(".filter-coll-content").slideUp();
+                    $(this).parent('.filter-collapse').removeClass('active');
+                } else{
+                    $('.filter-collapse').removeClass('active');
+                    $('.filter-coll-content').slideUp();
+                    $(this).parent('.filter-collapse').addClass('active');
+                    $(this).next('.filter-coll-content').slideDown();
+                }
+            })
+        });
+    </script>
 
     <!-- Main Js -->
     <script src="assets/js/main.js"></script>

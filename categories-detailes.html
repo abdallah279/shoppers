@@ -420,9 +420,82 @@
 
             <div class="row">
                 <div class="col-xl-6">
-                    <div class="carsouel">
-                        <img src="assets/imgs/Ne3.jpg" alt="">
+    
+                    <div class="product-flex">
+
+                        <!-- Carousel Thumbs -->
+                        <!-- <div class="dots-imgs owl-carousel owl-theme" id="thumbs">
+    
+                            <div class="owl-dot">
+                                <img src="assets/imgs/Ne2.jpg" alt="" class="dot-img">
+                            </div>
+                            <div class="owl-dot">
+                                <img src="assets/imgs/Ne3.jpg" alt="" class="dot-img">
+                            </div>
+                            <div class="owl-dot">
+                                <img src="assets/imgs/Ne4.jpg" alt="" class="dot-img">
+                            </div>
+    
+                            <div class="owl-dot">
+                                <img src="assets/imgs/Ne2.jpg" alt="" class="dot-img">
+                            </div>
+                            <div class="owl-dot">
+                                <img src="assets/imgs/Ne3.jpg" alt="" class="dot-img">
+                            </div>
+                            <div class="owl-dot">
+                                <img src="assets/imgs/Ne4.jpg" alt="" class="dot-img">
+                            </div>
+    
+                        </div> -->
+    
+                        <!-- Carousel Big -->
+                        <!-- <div class="product-carousel owl-carousel owl-theme position-relative" id="big">
+    
+                            <img src="assets/imgs/Ne2.jpg" alt="" class="pro-slide-img">
+                            <img src="assets/imgs/Ne3.jpg" alt="" class="pro-slide-img">
+                            <img src="assets/imgs/Ne4.jpg" alt="" class="pro-slide-img">
+    
+                            <img src="assets/imgs/Ne2.jpg" alt="" class="pro-slide-img">
+                            <img src="assets/imgs/Ne3.jpg" alt="" class="pro-slide-img">
+                            <img src="assets/imgs/Ne4.jpg" alt="" class="pro-slide-img">
+    
+                        </div> -->
+
+
+                        <div class="oute-owl-product">
+                            <div class="owl-carousel owl-product">
+                                <div class="item">
+                                    <img src="assets/imgs/Ne2.jpg">
+                                </div>
+                                <div class="item">
+                                    <img src="assets/imgs/Ne3.jpg">
+                                </div>
+                                <div class="item">
+                                    <img src="assets/imgs/Ne4.jpg">
+                                </div>
+                                <div class="item">
+                                    <img src="assets/imgs/Ne2.jpg">
+                                </div>
+                                <div class="item">
+                                    <img src="assets/imgs/Ne3.jpg">
+                                </div>
+                                <div class="item">
+                                    <img src="assets/imgs/Ne4.jpg">
+                                </div>
+                            </div>
+                            <div class="navigation-img-wrapper">
+                                <div class="navigator" data-item="0"><img src="assets/imgs/Ne2.jpg"></div>
+                                <div class="navigator" data-item="1"><img src="assets/imgs/Ne3.jpg"></div>
+                                <div class="navigator" data-item="2"><img src="assets/imgs/Ne4.jpg"></div>
+                                <div class="navigator" data-item="3"><img src="assets/imgs/Ne2.jpg"></div>
+                                <div class="navigator" data-item="4"><img src="assets/imgs/Ne3.jpg"></div>
+                                <div class="navigator" data-item="5"><img src="assets/imgs/Ne4.jpg"></div>
+                            </div>
+                        </div>
+    
+    
                     </div>
+    
                 </div>
                 <div class="col-xl-4">
                     <div class="product-detailes">
@@ -1236,12 +1309,56 @@
                 margin: 15,
                 autoplay: true,
                 rewind: true,
-                autoplayTimeout: 4000,
+                autoplayTimeout: 4300,
                 autoplaySpeed: 1400,
                 smartSpeed: 1400,
                 navText:['<i class="fa-solid fa-angle-right"></i>','<i class="fa-solid fa-angle-left"></i>'],
             });
         });
+    </script>
+
+
+    <script>
+        $(document).ready(function () {
+            $('.owl-product').on('initialized.owl.carousel', function () {
+                $('.navigator').eq(0).addClass('active');
+            });
+
+            $('.owl-product').owlCarousel({
+                loop: true,
+                autoplay: true,
+                autoplayTimeout: 3500,
+                autoplaySpeed: 1400,
+                smartSpeed: 1400,
+                rtl: true,
+                nav: false,
+                navText: ["", ""],
+                margin: 6,
+                singleItem: true,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    600: {
+                        items: 1
+                    },
+                    1000: {
+                        items: 1
+                    }
+                }
+            });
+
+            $('.owl-product').on('changed.owl.carousel', function (e) {
+                var item_index = e.page.index;
+                $('.navigator').removeClass('active').eq(item_index).addClass('active');
+            });
+
+            $('.navigator').on('click', function () {
+                var item_no = $(this).data('item');
+                $('.owl-product').trigger('to.owl.carousel', [item_no, 1000, true]);
+            });
+        });
+
     </script>
 
     <!-- Main Js -->
