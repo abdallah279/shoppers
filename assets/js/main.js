@@ -83,6 +83,12 @@ $('.side-open').on('click', function(){
   $('.overlay-m').fadeIn(600);
 });
 
+// SideBar
+$('.open-sidebar').on('click', function(){
+  $('.header-links').addClass('active');
+  $('.overlay-m').fadeIn(600);
+});
+
 $('.close').on('click', function(){
   $('.links').removeClass('active');
   $('.overlay-m').fadeOut(500);
@@ -90,6 +96,7 @@ $('.close').on('click', function(){
 
 $('.overlay-m').on('click', function(){
   $('.links').removeClass('active');
+  $('.header-links').removeClass('active');
   $(this).fadeOut(500);
 });
 
