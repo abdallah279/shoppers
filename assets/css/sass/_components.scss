@@ -915,6 +915,14 @@
   font-size: 17px;
 }
 
+.fs-18{
+  font-size: 18px;
+}
+
+.fs-19{
+  font-size: 19px;
+}
+
 .fs-22{
   font-size: 22px !important;
 }
@@ -1007,6 +1015,7 @@
   @include circle(80px);
   position: relative;
   z-index: 2;
+  display: block;
 
   img{
     width: 100%;
@@ -1054,6 +1063,13 @@
   width: 160px;
   height: 155px;
   border-radius: 12px;
+  object-fit: cover;
+}
+
+.story-img{
+  width: 350px;
+  height: 200px;
+  border-radius: 10px;
   object-fit: cover;
 }
 
@@ -1362,129 +1378,129 @@
 .input-g{
   margin-bottom: 22px;
   display: block;
+}
 
-  .main-label{
-    margin-bottom: 10px;
-    font-size: 16px;
-    // font-family: fontDemi;
-    color: $black;
-    display: flex;
-    align-items: center;
-    gap: 5px;
+.main-label{
+  margin-bottom: 10px;
+  font-size: 16px;
+  // font-family: fontDemi;
+  color: $black;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 
-    .label-hint{
-      color: $dark;
-      font-family: fontReg;
-      font-size: 14px;
-    }
+  .label-hint{
+    color: $dark;
+    font-family: fontReg;
+    font-size: 14px;
+  }
 
-    @media screen and (max-width:$screen-sm) {
-      font-size: 15px;
-    }
+  @media screen and (max-width:$screen-sm) {
+    font-size: 15px;
+  }
+
+  @media screen and (max-width:$screen-xs) {
+    font-family: fontMed;
+    font-size: 15px;
+  }
+}
+
+.main-input{
+  position: relative;
+
+  .input-me{
+    width: 100%;
+    min-height: 48px;
+    border-radius: 5px;
+    padding: 0 12px;
+    outline: none;
+    border: none;
+    font-size: 14px;
+    color: $dark;
+    transition: $main-transition;
+    border: 1px solid $border-color;
+    background-color: $white;
 
     @media screen and (max-width:$screen-xs) {
-      font-family: fontMed;
-      font-size: 15px;
+      min-height: 44px;
+    }
+
+    &.photo-input{
+      display: flex;
+      align-items: center;
+      font-size: 13px;
+      color: $placholder-color;
+      cursor: pointer;
+    }
+
+    &::placeholder{
+      font-size: 13px;
+      color: $placholder-color;
+      transition: $main-transition; 
+
+      @media screen and (max-width:$screen-xs) {
+        font-size: 12px;
+      }
+    }
+
+    &:focus{
+      border-color: $dark;
+
+      &::placeholder{
+        opacity: 0;
+      }
+    }
+
+    &.phone{
+      width: calc(100% - 120px);
+      padding: 0 12px !important;
+    }
+
+    &.text-area{
+      height: 145px;
+      padding: 12px;
+    }
+
+    &.text-area-lg{
+      height: 298px;
+      padding: 12px;
+
+      @media screen and (max-width:$screen-lg) {
+        height: 200px;
+      }
+
+      @media screen and (max-width:$screen-xs) {
+        height: 160px;
+      }
+    }
+
+    &.text-area-sm{
+      height: 90px;
+      padding: 12px;
+    }
+
+    &.text-area-sm2{
+      height: 70px;
+      padding: 12px;
     }
   }
 
-  .main-input{
-    position: relative;
+  .main-icon{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    @include dir-right(14px);
+    color: $dark;
+    font-size: 14px;
+    cursor: pointer;
+    pointer-events: none;
 
-    .input-me{
-      width: 100%;
-      min-height: 48px;
-      border-radius: 5px;
-      padding: 0 12px;
-      outline: none;
-      border: none;
-      font-size: 14px;
-      color: $dark;
-      transition: $main-transition;
-      border: 1px solid $border-color;
-      background-color: $white;
-
-      @media screen and (max-width:$screen-xs) {
-        min-height: 44px;
-      }
-
-      &.photo-input{
-        display: flex;
-        align-items: center;
-        font-size: 13px;
-        color: $placholder-color;
-        cursor: pointer;
-      }
-
-      &::placeholder{
-        font-size: 13px;
-        color: $placholder-color;
-        transition: $main-transition; 
-
-        @media screen and (max-width:$screen-xs) {
-          font-size: 12px;
-        }
-      }
-
-      &:focus{
-        border-color: $dark;
-
-        &::placeholder{
-          opacity: 0;
-        }
-      }
-
-      &.phone{
-        width: calc(100% - 120px);
-        padding: 0 12px !important;
-      }
-
-      &.text-area{
-        height: 145px;
-        padding: 12px;
-      }
-
-      &.text-area-lg{
-        height: 298px;
-        padding: 12px;
-
-        @media screen and (max-width:$screen-lg) {
-          height: 200px;
-        }
-
-        @media screen and (max-width:$screen-xs) {
-          height: 160px;
-        }
-      }
-
-      &.text-area-sm{
-        height: 90px;
-        padding: 12px;
-      }
-
-      &.text-area-sm2{
-        height: 70px;
-        padding: 12px;
-      }
+    &.yellow{
+      color: $yellow;
     }
 
-    .main-icon{
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      @include dir-right(14px);
-      color: $dark;
-      font-size: 14px;
-      cursor: pointer;
-      pointer-events: none;
-
-      &.yellow{
-        color: $yellow;
-      }
-
-      &.search-ic{
-        pointer-events: auto;
-      }
+    &.search-ic{
+      pointer-events: auto;
     }
   }
 }

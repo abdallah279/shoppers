@@ -1085,6 +1085,14 @@ html[lang=ar] .iti--allow-dropdown .iti__flag-container, html[lang=ar] .iti--sep
   font-size: 17px;
 }
 
+.fs-18 {
+  font-size: 18px;
+}
+
+.fs-19 {
+  font-size: 19px;
+}
+
 .fs-22 {
   font-size: 22px !important;
 }
@@ -1192,6 +1200,7 @@ html[lang=ar] .remove-append {
   height: 80px;
   position: relative;
   z-index: 2;
+  display: block;
 }
 .store-img-m img {
   width: 100%;
@@ -1232,6 +1241,14 @@ html[lang=ar] .remove-append {
   width: 160px;
   height: 155px;
   border-radius: 12px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.story-img {
+  width: 350px;
+  height: 200px;
+  border-radius: 10px;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -1554,7 +1571,8 @@ html[lang=ar] .remove-product {
   margin-bottom: 22px;
   display: block;
 }
-.input-g .main-label {
+
+.main-label {
   margin-bottom: 10px;
   font-size: 16px;
   color: #202020;
@@ -1562,26 +1580,27 @@ html[lang=ar] .remove-product {
   align-items: center;
   gap: 5px;
 }
-.input-g .main-label .label-hint {
+.main-label .label-hint {
   color: #505052;
   font-family: fontReg;
   font-size: 14px;
 }
 @media screen and (max-width: 576px) {
-  .input-g .main-label {
+  .main-label {
     font-size: 15px;
   }
 }
 @media screen and (max-width: 425px) {
-  .input-g .main-label {
+  .main-label {
     font-family: fontMed;
     font-size: 15px;
   }
 }
-.input-g .main-input {
+
+.main-input {
   position: relative;
 }
-.input-g .main-input .input-me {
+.main-input .input-me {
   width: 100%;
   min-height: 48px;
   border-radius: 5px;
@@ -1595,76 +1614,76 @@ html[lang=ar] .remove-product {
   background-color: #fff;
 }
 @media screen and (max-width: 425px) {
-  .input-g .main-input .input-me {
+  .main-input .input-me {
     min-height: 44px;
   }
 }
-.input-g .main-input .input-me.photo-input {
+.main-input .input-me.photo-input {
   display: flex;
   align-items: center;
   font-size: 13px;
   color: #adabab;
   cursor: pointer;
 }
-.input-g .main-input .input-me::-moz-placeholder {
+.main-input .input-me::-moz-placeholder {
   font-size: 13px;
   color: #adabab;
   -moz-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
-.input-g .main-input .input-me::placeholder {
+.main-input .input-me::placeholder {
   font-size: 13px;
   color: #adabab;
   transition: all 0.3s ease;
 }
 @media screen and (max-width: 425px) {
-  .input-g .main-input .input-me::-moz-placeholder {
+  .main-input .input-me::-moz-placeholder {
     font-size: 12px;
   }
-  .input-g .main-input .input-me::placeholder {
+  .main-input .input-me::placeholder {
     font-size: 12px;
   }
 }
-.input-g .main-input .input-me:focus {
+.main-input .input-me:focus {
   border-color: #505052;
 }
-.input-g .main-input .input-me:focus::-moz-placeholder {
+.main-input .input-me:focus::-moz-placeholder {
   opacity: 0;
 }
-.input-g .main-input .input-me:focus::placeholder {
+.main-input .input-me:focus::placeholder {
   opacity: 0;
 }
-.input-g .main-input .input-me.phone {
+.main-input .input-me.phone {
   width: calc(100% - 120px);
   padding: 0 12px !important;
 }
-.input-g .main-input .input-me.text-area {
+.main-input .input-me.text-area {
   height: 145px;
   padding: 12px;
 }
-.input-g .main-input .input-me.text-area-lg {
+.main-input .input-me.text-area-lg {
   height: 298px;
   padding: 12px;
 }
 @media screen and (max-width: 992px) {
-  .input-g .main-input .input-me.text-area-lg {
+  .main-input .input-me.text-area-lg {
     height: 200px;
   }
 }
 @media screen and (max-width: 425px) {
-  .input-g .main-input .input-me.text-area-lg {
+  .main-input .input-me.text-area-lg {
     height: 160px;
   }
 }
-.input-g .main-input .input-me.text-area-sm {
+.main-input .input-me.text-area-sm {
   height: 90px;
   padding: 12px;
 }
-.input-g .main-input .input-me.text-area-sm2 {
+.main-input .input-me.text-area-sm2 {
   height: 70px;
   padding: 12px;
 }
-.input-g .main-input .main-icon {
+.main-input .main-icon {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -1673,16 +1692,16 @@ html[lang=ar] .remove-product {
   cursor: pointer;
   pointer-events: none;
 }
-html[lang=en] .input-g .main-input .main-icon {
+html[lang=en] .main-input .main-icon {
   right: 14px;
 }
-html[lang=ar] .input-g .main-input .main-icon {
+html[lang=ar] .main-input .main-icon {
   left: 14px;
 }
-.input-g .main-input .main-icon.yellow {
+.main-input .main-icon.yellow {
   color: #C49E58;
 }
-.input-g .main-input .main-icon.search-ic {
+.main-input .main-icon.search-ic {
   pointer-events: auto;
 }
 
