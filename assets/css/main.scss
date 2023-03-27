@@ -16,17 +16,21 @@
         height: 420px;
         @include center;
 
+        &.lg{
+            height: 420px !important;
+        }
+
         &.md{
             height: 370px;
         }
 
-        // @media screen and (max-width:$screen-lg) {
-        //     padding: 150px 0;
-        // }
+        @media screen and (max-width:$screen-lg) {
+            height: 400px;
+        }
 
-        // @media screen and (max-width:$screen-md) {
-        //     padding: 90px 0;
-        // }
+        @media screen and (max-width:$screen-xs) {
+            height: 300px;
+        }
 
         .home-img{
             @include overlay(none);
@@ -283,16 +287,32 @@
     .categories-name{
         font-size: 16px;
         color: $black;
+
+        @media screen and (max-width:$screen-xs) {
+            font-size: 15px;
+        }
     }
 
     &.lg{
         .cat-img-con{
             @include circle(220px);
+
+            @media screen and (max-width:$screen-sm) {
+                @include circle(150px);
+            }
+
+            @media screen and (max-width:$screen-xs) {
+                @include circle(120px);
+            }
         }
 
         .categories-name{
             font-size: 18px;
             font-family: fontDemi;
+
+            @media screen and (max-width:$screen-xs) {
+                font-style: 16px;
+            }
         }
     }
 
@@ -412,6 +432,9 @@
             font-size: 18px;
             color: $black;
             font-family: fontDemi;
+            @media screen and (max-width:$screen-xs) {
+                font-style: 16px;
+            }
         }
     }
 
@@ -577,12 +600,21 @@
     align-items: start;
     justify-content: space-between;
     gap: 15px;
-    flex-wrap: wrap;
+    // flex-wrap: wrap;
+
+    @media screen and (max-width:$screen-sm) {
+        gap: 10px;
+    }
 
     .store-right{
         display: flex;
         align-items: start;
+        flex-wrap: wrap;
         gap: 22px;
+
+        @media screen and (max-width:$screen-sm) {
+            gap: 15px;
+        }
     
         .store-text .sec-text{
             margin-top: 12px;
@@ -640,10 +672,13 @@
         height: 100%;
         @include center;
         background-color: rgba($color: #000000, $alpha: .5);
-
         color: $white;
         font-family: fontDemi;
         font-size: 19px;
+
+        @media screen and (max-widdth:$screen-sm) {
+            font-size: 16px;
+        }
     }
 
     &:hover{
@@ -701,6 +736,10 @@
     .sec-text{
         font-size: 16px;
         font-family: fontDemi;
+
+        @media screen and (max-width:$screen-xs) {
+            font-style: 15px;
+        }
     }
 
     .price{
@@ -731,6 +770,11 @@
 
     &.active{
         transform: translateX(0) !important;
+    }
+
+    @media screen and (max-width:$screen-sm) {
+        width: 300px;
+        padding: 35px 25px;
     }
 
 
@@ -764,6 +808,10 @@
 
     .filter-coll-container{
         padding: 0 20px;
+
+        @media screen and (max-width:$screen-sm) {
+            padding: 0;
+        }
     }
 
     .filter-collapse{
@@ -832,6 +880,10 @@
     gap: 10px;
     flex-direction: row-reverse;
     overflow: hidden;
+
+    @media screen and (max-width:$screen-sm) {
+        flex-direction: column;
+    }
 }
 
 .owl-product {
@@ -846,7 +898,11 @@
 .owl-product .item {
     width: 100%;
     height: 530px;
-    position: relative
+    position: relative;
+
+    @media screen and (max-width:$screen-sm) {
+        height: 350px;
+    }
 }
 
 .owl-product img,
@@ -884,6 +940,15 @@
             border-color: $black;
             background-color: $white;
         }
+
+        @media screen and (max-width:$screen-sm) {
+            width: 100px;
+            height: 90px;
+        }
+    }
+
+    @media screen and (max-width:$screen-sm) {
+        flex-direction: row;
     }
 
     &::-webkit-scrollbar {

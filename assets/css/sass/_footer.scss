@@ -6,18 +6,35 @@
 
         display: flex;
         align-items: center;
+        flex-wrap: wrap;
         gap: 60px;
         margin-bottom: 60px;
+
+        @media screen and (max-width:$screen-md) {
+            gap: 15px;
+        }
+
+        @media screen and (max-width:$screen-xs) {
+            margin-bottom: 30px;
+        }
         
         .footer-title{
             font-size: 24px;
             color: $black;
             font-family: fontDemi;
+            @media screen and (max-width:$screen-sm) {
+                font-size: 20px;
+            }
         }
 
         .footer-social{
             @include center;
+            flex-wrap: wrap;
             gap: 16px;
+
+            @media screen and (max-width:$screen-sm) {
+                gap: 10px;
+            }
 
             .social-icon{
                 @include center;
@@ -26,6 +43,10 @@
                 transition: $main-transition;
                 border: 1px solid transparent;
                 background-color: $white;
+
+                @media screen and (max-width:$screen-sm) {
+                    @include circle(44px);
+                }
 
                 @media screen and (max-width:$screen-xs) {
                     @include circle(38px);
@@ -37,8 +58,8 @@
                     transition: $main-transition;
                     
                     @media screen and (max-width:$screen-xs) {
-                        max-width: 16px;
-                        max-height: 16px;
+                        max-width: 17px;
+                        max-height: 17px;
                     }
     
                 }

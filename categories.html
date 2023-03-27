@@ -111,7 +111,15 @@
                     <div class="head-down-con">
     
                         <div class="head-links-logo">
+                            <button type="button" class="mobile-btn white open-sidebar">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </button>
                             <div class="header-links">
+                                <a href="index.html" class="logo">
+                                    <img src="assets/imgs/logo.png" alt="logo">
+                                </a>
                                 <a href="about-shoppers.html" class="head-link">عن Shoppers</a>
                                 <a href="contact-us.html" class="head-link">تواصل معنا</a>
                                 <a href="rate-us.html" class="head-link">قيمنا</a>
@@ -178,9 +186,6 @@
                             <span></span>
                             <span></span>
                             <span></span>
-                        </button>
-                        <button type="button" class="mobile-btn search-open">
-                            <i class="fa-solid fa-magnifying-glass"></i>
                         </button>
                     </div>
     
@@ -1178,9 +1183,9 @@
                 rtl: isRtlC ? true : false,
                 nav: false,
                 dots: true,
-                // margin: 10,
+                margin: 8,
                 autoplay: true,
-                autoplayTimeout: 5000,
+                autoplayTimeout: 4400,
                 autoplaySpeed: 1500,
                 smartSpeed: 1500,
             });
@@ -1188,16 +1193,27 @@
 
         $(document).ready(function(){
             $(".categories-carousel").owlCarousel({
-                items:6,
+                items:2,
                 loop: true,
                 rtl: isRtlC ? true : false,
                 nav: false,
                 dots: false,
                 margin: 15,
                 autoplay: true,
-                autoplayTimeout: 5000,
+                autoplayTimeout: 4400,
                 autoplaySpeed: 1500,
                 smartSpeed: 1500,
+                responsive : {
+                    400 : {
+                        items:3,
+                    },
+                    500 : {
+                        items:4,
+                    },
+                    991 : {
+                        items: 6,
+                    }
+                }
             });
         });
 

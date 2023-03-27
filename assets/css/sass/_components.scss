@@ -153,7 +153,6 @@
 
 // big-title
 .big-title{
-  width: fit-content;
   font-size: 36px;
   background-color: $dark;
   padding: 24px;
@@ -171,6 +170,23 @@
     -webkit-text-fill-color: transparent;
   }
 
+  @media screen and (max-width:$screen-sm) {
+    font-size: 32px;
+    padding: 22px;
+    width: 350px;
+    border-radius: 8px;
+    margin-bottom: 35px;
+  }
+
+  @media screen and (max-width:$screen-xs) {
+    font-size: 26px;
+    padding: 20px;
+    width: 320px;
+  }
+
+  @media screen and (max-width:$screen-xxs) {
+    width: 100%;
+  }
 }
 
 // Main Title
@@ -233,16 +249,41 @@
 .search-table-con{
   @include center;
   gap: 20px;
+  @media screen and (max-width:$screen-sm) {
+    gap: 12px;
+  }
+
+  @media screen and (max-width:$screen-xs) {
+    flex-wrap: wrap;
+  }
 
   .search-table{
     position: relative;
+    @media screen and (max-width:$screen-xs) {
+      width: 100%;
+    }
 
     .search-input{
       width: 400px;
+
+      @media screen and (max-width:$screen-md) {
+        width: 320px;
+      }
+
+      @media screen and (max-width:$screen-sm) {
+        width: 270px;
+      }
+
+      @media screen and (max-width:$screen-xs) {
+        width: 100%;
+      }
     }
 
     .search-select{
       width: 140px;
+      @media screen and (max-width:$screen-xs) {
+        width: 100%;
+      }
     }
 
     .search-style{
@@ -604,6 +645,7 @@
   .breadcrumb-m{
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     gap: 14px;
     font-size: 14px;
 
@@ -933,6 +975,14 @@
   &.lg{
     gap: 10px 23px;
   }
+
+  @media screen and (max-width:$screen-sm) {
+    .main-btn{
+      width: fit-content;
+      min-width: 150px;
+      padding: 0 12px;
+    }
+  }
 }
 
 /********************* Classes *********************/
@@ -990,6 +1040,14 @@
 
 .fs-24{
   font-size: 24px !important;
+
+  @media screen and (max-width:$screen-xs) {
+    font-size: 18px !important;
+  }
+}
+
+.lh{
+  line-height: 1.7;
 }
 
 .ff-d{
@@ -1048,6 +1106,21 @@
 .px-7{
   padding-left: 4.5rem!important;
   padding-right: 4.5rem!important;
+  
+  @media screen and (max-width:$screen-md) {
+    padding-left: 3.5rem!important;
+    padding-right: 3.5rem!important;
+  }
+  
+  @media screen and (max-width:$screen-sm) {
+    padding-left: 3rem!important;
+    padding-right: 3rem!important;
+  }
+  
+  @media screen and (max-width:$screen-xs) {
+    padding-left: 2rem!important;
+    padding-right: 2rem!important;
+  }
 }
 
 .section-style{
@@ -1117,6 +1190,20 @@
           height: 107%;
       }
     }
+
+    @media screen and (max-width:$screen-sm) {
+      @include circle(80px);
+      &.story{
+        img{
+            border: 3px solid $white;
+        }
+    
+        &::after{
+            width: 104%;
+            height: 104%;
+        }
+      }
+    }
   }
 }
 
@@ -1132,6 +1219,16 @@
   height: 200px;
   border-radius: 10px;
   object-fit: cover;
+
+  @media screen and (max-width:$screen-sm) {
+    width: 260px;
+    height: 170px;
+  }
+
+  @media screen and (max-width:$screen-xs) {
+    width: 220px;
+    height: 130px;
+  }
 }
 
 .img-container{
@@ -1268,6 +1365,7 @@
   border-radius: 5px;
   overflow: hidden;
   border: 1px solid $dark;
+  order: 3;
 
   .filter-tab{
     background-color: $white;
@@ -1290,6 +1388,10 @@
   flex-wrap: wrap;
   gap: 15px;
 
+  @media screen and (max-width:$screen-sm) {
+    gap: 10px;
+  }
+
   .tab-m{
     min-width: 190px;
     min-height: 46px;
@@ -1306,6 +1408,22 @@
       color: $white;
       background-color: $dark;
       border-color: $dark;
+    }
+
+    @media screen and (max-width:$screen-md) {
+      min-width: 150px;
+      min-height: 44px;
+    }
+
+    @media screen and (max-width:$screen-sm) {
+      min-width: 130px;
+      min-height: 44px;
+    }
+
+    @media screen and (max-width:$screen-xs) {
+      min-width: fit-content;
+      padding: 0 18px;
+      border-radius: 5px;
     }
   }
 }
@@ -2421,6 +2539,11 @@
     i{
       transition: $main-transition;
     }
+
+    @media screen and (max-width:$screen-xs) {
+      font-size: 15px;
+      padding: 12px;
+    }
   }
 
   &.active {
@@ -2441,17 +2564,11 @@
     line-height: 1.7;
     display: none;
     font-family: fontReg;
-  }
-}
 
-@media screen and (max-width:600px) {
-  .faq-open{
+    @media screen and (max-width:$screen-xs) {
+      font-size: 14px;
       padding: 12px 15px;
-  }
-
-  .faq-content{
-    padding: 15px;
-    font-size: 15px;
+    }
   }
 }
 

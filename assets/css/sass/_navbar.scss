@@ -18,6 +18,16 @@
 
         .head-top-con{
             @include between;
+            flex-wrap: wrap;
+
+            @media screen and (max-width:$screen-sm) {
+                gap: 12px;
+            }
+
+            @media screen and (max-width:$screen-xs) {
+                justify-content: center;
+            }
+    
             .head-info{
                 display: flex;
                 align-items: center;
@@ -29,7 +39,12 @@
                     height: 20px;
                     background-color: $white2;
                 }
+
+                @media screen and (max-width:$screen-sm) {
+                    gap: 7px;
+                }
             }
+            
     
             .head-lang{
                 display: flex;
@@ -109,6 +124,10 @@
                 align-items: center;
                 gap: 35px;
 
+                @media screen and (max-width:$screen-lg2) {
+                    gap: 15px;
+                }
+
                 .open-sidebar{
                     display: none;
                     color: $white;
@@ -124,6 +143,10 @@
                     display: flex;
                     align-items: center;
                     gap: 16px;
+
+                    @media screen and (max-width:$screen-lg2) {
+                        gap: 10px;
+                    }
 
                     .head-link{
                         color: $white;
@@ -242,15 +265,25 @@
                         width: 200px;
                         height: 58px;
     
-                        @media screen and (max-width:$screen-lg) {
+                        @media screen and (max-width:$screen-lg2) {
                             width: 160px;
                             height: 52px;
+                        }
+    
+                        @media screen and (max-width:$screen-sm) {
+                            width: 140px;
+                            height: 50px;
+                        }
+    
+                        @media screen and (max-width:$screen-xs) {
+                            width: 120px;
+                            height: 47px;
                         }
                     }
                 }
 
                 @media screen and (max-width:$screen-lg) {
-                    gap: 15px;
+                    gap: 10px;
                 }
             }
 
@@ -260,7 +293,7 @@
                 align-items: center;
                 gap: 15px;
 
-                @media screen and (max-width:$screen-xs) {
+                @media screen and (max-width:$screen-md) {
                     gap: 8px;
                 }
 
@@ -270,6 +303,11 @@
                         max-width: 24px;
                         max-height: 20px;
                         transition: $main-transition;
+
+                        @media screen and (max-width:$screen-md) {
+                            max-width: 20px;
+                            max-height: 18px;
+                        }
                     }
                 }
             }

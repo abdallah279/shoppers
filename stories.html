@@ -111,7 +111,15 @@
                     <div class="head-down-con">
     
                         <div class="head-links-logo">
+                            <button type="button" class="mobile-btn white open-sidebar">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </button>
                             <div class="header-links">
+                                <a href="index.html" class="logo">
+                                    <img src="assets/imgs/logo.png" alt="logo">
+                                </a>
                                 <a href="about-shoppers.html" class="head-link">عن Shoppers</a>
                                 <a href="contact-us.html" class="head-link">تواصل معنا</a>
                                 <a href="rate-us.html" class="head-link">قيمنا</a>
@@ -178,9 +186,6 @@
                             <span></span>
                             <span></span>
                             <span></span>
-                        </button>
-                        <button type="button" class="mobile-btn search-open">
-                            <i class="fa-solid fa-magnifying-glass"></i>
                         </button>
                     </div>
     
@@ -418,8 +423,8 @@
     <div class="stores-sec main-padding">
         <div class="container">
 
-            <div class="section-style mb-5 px-5">
-                <div class="story-con d-flex align-items-center gap-5 flex-wrap mb-4">
+            <div class="section-style mb-5 px-md-5">
+                <div class="story-con d-flex align-items-center gap-md-5 gap-3 flex-wrap mb-4">
     
                     <div class="right">
                         <a href="store.html" class="store-img-m story lg mb-3">
@@ -472,8 +477,8 @@
                 </div>
             </div>
 
-            <div class="section-style mb-5 px-5">
-                <div class="story-con d-flex align-items-center gap-5 flex-wrap mb-4">
+            <div class="section-style mb-5 px-md-5">
+                <div class="story-con d-flex align-items-center gap-md-5 gap-3 flex-wrap mb-4">
     
                     <div class="right">
                         <a href="store.html" class="store-img-m story lg mb-3">
@@ -526,8 +531,8 @@
                 </div>
             </div>
 
-            <div class="section-style mb-5 px-5">
-                <div class="story-con d-flex align-items-center gap-5 flex-wrap mb-4">
+            <div class="section-style mb-5 px-md-5">
+                <div class="story-con d-flex align-items-center gap-md-5 gap-3 flex-wrap mb-4">
     
                     <div class="right">
                         <a href="store.html" class="store-img-m story lg mb-3">
@@ -853,7 +858,7 @@
         $(document).ready(function(){
             let isRtlC = $('html[lang="ar"]').length > 0;
             $(".categories-carousel").owlCarousel({
-                items:8,
+                items:2,
                 loop: true,
                 rtl: isRtlC ? true : false,
                 nav: false,
@@ -863,6 +868,20 @@
                 autoplayTimeout: 4000,
                 autoplaySpeed: 1500,
                 smartSpeed: 1500,
+                responsive : {
+                    400 : {
+                        items:3,
+                    },
+                    500 : {
+                        items:4,
+                    },
+                    991 : {
+                        items: 6,
+                    },
+                    1100 : {
+                        items: 8,
+                    }
+                }
             });
         });
     </script>
