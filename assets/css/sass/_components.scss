@@ -1426,8 +1426,9 @@
 
     @media screen and (max-width:$screen-xs) {
       min-width: fit-content;
-      padding: 0 18px;
+      padding: 0 16px;
       border-radius: 5px;
+      font-size: 14px;
     }
   }
 }

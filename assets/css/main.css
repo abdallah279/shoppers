@@ -1635,8 +1635,9 @@ html[lang=ar] .remove-append {
   .tabs-m .tab-m {
     min-width: -moz-fit-content;
     min-width: fit-content;
-    padding: 0 18px;
+    padding: 0 16px;
     border-radius: 5px;
+    font-size: 14px;
   }
 }
 
@@ -4324,6 +4325,13 @@ html[lang=ar] .categories-card .img .heart {
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   gap: 30px 25px;
 }
+@media screen and (max-width: 375px) {
+  .grid-boxs {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px 25px;
+  }
+}
 
 .link-box {
   display: block;
@@ -4332,6 +4340,11 @@ html[lang=ar] .categories-card .img .heart {
   overflow: hidden;
   height: 160px;
   width: 100%;
+}
+@media screen and (max-width: 425px) {
+  .link-box {
+    height: 140px;
+  }
 }
 .link-box .box-img {
   width: 100%;
@@ -4354,7 +4367,7 @@ html[lang=ar] .categories-card .img .heart {
   font-family: fontDemi;
   font-size: 19px;
 }
-@media screen and (max-widdth: 576px) {
+@media screen and (max-width: 576px) {
   .link-box .box-con {
     font-size: 16px;
   }

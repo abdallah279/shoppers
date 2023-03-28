@@ -671,6 +671,10 @@
 // grid-boxs
 .grid-boxs{
     @include grid(350px, 25px);
+    
+    @media screen and (max-width:$screen-xxs) {
+        @include grid(300px, 25px);
+    }
 }
 
 .link-box{
@@ -680,6 +684,10 @@
     overflow: hidden;
     height: 160px;
     width: 100%;
+
+    @media screen and (max-width:$screen-xs) {
+        height: 140px;
+    }
 
     .box-img{
         width: 100%;
@@ -700,7 +708,7 @@
         font-family: fontDemi;
         font-size: 19px;
 
-        @media screen and (max-widdth:$screen-sm) {
+        @media screen and (max-width:$screen-sm) {
             font-size: 16px;
         }
     }
