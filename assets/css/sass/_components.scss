@@ -1118,8 +1118,8 @@
   }
   
   @media screen and (max-width:$screen-xs) {
-    padding-left: 2rem!important;
-    padding-right: 2rem!important;
+    padding-left: 2.2rem!important;
+    padding-right: 2.2rem!important;
   }
 }
 
@@ -1212,6 +1212,10 @@
   height: 155px;
   border-radius: 12px;
   object-fit: cover;
+
+  @media screen and (max-width:$screen-xs) {
+    @include circle(110px)
+  }
 }
 
 .story-img{

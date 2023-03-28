@@ -551,7 +551,7 @@
                     margin-bottom: 25px;
 
                     @media screen and (max-width:$screen-xs) {
-                        font-style: 15px;
+                        font-size: 15px;
                         margin-bottom: 20px;
                     }
                 }
@@ -588,7 +588,8 @@
                     object-fit: cover;
                     
                     @media screen and (max-width:$screen-sm) {
-                        height: 150px;
+                        height: 130px;
+                        border-radius: 5px;
                     }
                 }
             }

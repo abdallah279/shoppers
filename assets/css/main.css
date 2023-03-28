@@ -1311,8 +1311,8 @@ html[lang=ar] .remove-append {
 }
 @media screen and (max-width: 425px) {
   .px-7 {
-    padding-left: 2rem !important;
-    padding-right: 2rem !important;
+    padding-left: 2.2rem !important;
+    padding-right: 2.2rem !important;
   }
 }
 
@@ -1400,6 +1400,13 @@ html[lang=ar] .remove-append {
   border-radius: 12px;
   -o-object-fit: cover;
      object-fit: cover;
+}
+@media screen and (max-width: 425px) {
+  .store-img-squer {
+    border-radius: 50%;
+    width: 110px;
+    height: 110px;
+  }
 }
 
 .story-img {
@@ -3439,7 +3446,7 @@ html[lang=ar] .navbar-m .navbar-content .mega-menu .menu-section.border-m {
 }
 @media screen and (max-width: 425px) {
   .navbar-m .navbar-content .mega-menu .menu-section .menu-title {
-    font-style: 15px;
+    font-size: 15px;
     margin-bottom: 20px;
   }
 }
@@ -3476,7 +3483,8 @@ html[lang=ar] .navbar-m .navbar-content .mega-menu .menu-section.border-m {
 }
 @media screen and (max-width: 576px) {
   .navbar-m .navbar-content .mega-menu .menu-section .menu-img {
-    height: 150px;
+    height: 130px;
+    border-radius: 5px;
   }
 }
 
@@ -4246,10 +4254,14 @@ html[lang=ar] .categories-card .img .heart {
   align-items: start;
   justify-content: space-between;
   gap: 15px;
+  flex-wrap: wrap;
 }
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 425px) {
   .store-con {
     gap: 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }
 .store-con .store-right {
@@ -4263,8 +4275,26 @@ html[lang=ar] .categories-card .img .heart {
     gap: 15px;
   }
 }
+@media screen and (max-width: 425px) {
+  .store-con .store-right {
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+}
 .store-con .store-right .store-text .sec-text {
   margin-top: 12px;
+}
+@media screen and (max-width: 425px) {
+  .store-con .store-right .store-text .sec-text {
+    justify-content: center;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 425px) {
+  .store-con .store-right .main-btn {
+    margin: auto;
+  }
 }
 .store-con .store-right .store-top {
   display: flex;
@@ -4274,6 +4304,11 @@ html[lang=ar] .categories-card .img .heart {
 .store-con .store-right .store-top .store-name {
   font-size: 17px;
   font-family: fontBold;
+}
+@media screen and (max-width: 425px) {
+  .store-con .store-right .store-top {
+    justify-content: center;
+  }
 }
 .store-con.vert {
   display: block;
