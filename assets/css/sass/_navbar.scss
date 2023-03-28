@@ -15,6 +15,28 @@
     .header-top{
         padding: 6px 0;
         background-color: $white;
+        @media screen and (max-width:$screen-md) {
+            padding: 10px 0;
+        }
+
+        .mobile-text{
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            @media screen and (max-width:$screen-md) {
+                display: none !important;
+            }
+        }
+
+        .mobile-ic{
+            @media screen and (min-width:$screen-md) {
+                display: none;
+            }
+
+            font-size: 18px !important;
+            cursor: pointer;
+            color:$dark;
+        }
 
         .head-top-con{
             @include between;
@@ -22,10 +44,6 @@
 
             @media screen and (max-width:$screen-sm) {
                 gap: 12px;
-            }
-
-            @media screen and (max-width:$screen-xs) {
-                justify-content: center;
             }
     
             .head-info{
@@ -38,10 +56,13 @@
                     width: 1px;
                     height: 20px;
                     background-color: $white2;
+                    @media screen and (max-width:$screen-md) {
+                        display: none;
+                    }
                 }
-
-                @media screen and (max-width:$screen-sm) {
-                    gap: 7px;
+    
+                @media screen and (max-width:$screen-md) {
+                    gap: 16px;
                 }
             }
             
@@ -354,7 +375,7 @@
                 top: 0;
                 @include dir-left(0);
                 height: 100vh;
-                width: 280px;
+                width: 310px;
                 flex-direction: column;
                 align-items: flex-start;
                 background-color: $white;
@@ -384,9 +405,14 @@
                 }
                 &::-webkit-scrollbar-thumb {
                     border-radius: 25px;
-                    background-color: $blue2;
+                    background-color: $green;
                 }
 
+            }
+
+            @media screen and (max-width:$screen-xs) {
+                padding: 80px 12px 20px;
+                width: 280px;
             }
 
             .link{
@@ -394,8 +420,7 @@
                 color: $black2;
                 transition: $main-transition;
                 padding: 12px 14px;
-                position: relative;
-                z-index: 2;
+                position: unset !important;
                 cursor: pointer;
 
                 @media screen and (max-width:$screen-lg){
@@ -403,54 +428,26 @@
                     border-radius: 5px;
                     display: block;
                     width: 100%;
-                    position: relative;
-                    overflow: hidden;
                     flex-shrink: 0;
-
-                    &::before{
-                        position: absolute;
-                        content: '';
-                        top: 0;
-                        @include dir-left(0);
-                        width: 0px;
-                        height: 100%;
-                        background-color: #f9f9f9;
-                        transition: all .4s ease;
-                        z-index: -1;
+                    
+                    &:hover, &.active,&.active-m{
+                        background-color: $green;
+                        color: $white;
+                        transform: skew(0) !important;
                     }
-
-                    &::after{
-                        display: none;
-                    }
-
-                    &:hover, &.active{
-                        color: $green;
-                        &::before{
-                            width: 100%;
-                        }
-                        &::after{
-                            height: 98%;
-                            @include dir-left(calc(99%));
-                        }
+                    
+                    &.open-menu{
+                        position: relative !important;
                     }
                 }
 
-                &::after{
-                    content: '';
-                    position: absolute;
-                    top: 0;
-                    right: 0;
+                &:hover, &.active{
                     background-color: $green;
-                    width: 100%;
-                    height: 100%;
-                    opacity: 0;
-                    transition: $main-transition;
-                    z-index: -1;
                     transform: skew(-10deg);
                 }
 
-                &:hover::after, &.active::after, &.active-m::after{
-                    opacity: 1;
+                &.open-menu:hover{
+                    transform: unset !important;
                 }
 
             }
@@ -497,19 +494,34 @@
         .mega-menu{
             position: absolute;
             top: 80px;
-            right: 0;
-            width: 90%;
+            @include dir-left(0);
+            width: 100%;
             height: 400px;
             background-color: $white;
             z-index: 29;
             opacity: 0;
             pointer-events: none;
             transition: all .7s cubic-bezier(0.68, -0.30, 0.265, 1.8);
+            box-shadow: $main-shadow;
+
+            @media screen and (max-width:$screen-lg) {
+                height: auto;
+                opacity: 1;
+                pointer-events: auto;
+                display: none;
+                padding: 5px 0 10px;
+            }
 
             &.show{
                 opacity: 1;
-                top: 102%;
+                top: 100%;
                 pointer-events: auto;
+
+                @media screen and (max-width:$screen-lg) {
+                    display: block;
+                    top: 115%;
+                    border-radius: 5px;
+                }
             }
 
             .menu-section{
@@ -522,6 +534,14 @@
                     #{$rtl} & {
                         border-left: 1px solid $border-color;
                     }
+
+                    @media screen and (max-width:$screen-lg) {
+                        border: none !important;
+                    }
+                }
+
+                @media screen and (max-width:$screen-xs) {
+                    padding: 20px 12px 0;
                 }
 
                 .menu-title{
@@ -529,6 +549,11 @@
                     color: $black;
                     font-family: fontBold;
                     margin-bottom: 25px;
+
+                    @media screen and (max-width:$screen-xs) {
+                        font-style: 15px;
+                        margin-bottom: 20px;
+                    }
                 }
 
                 .menu-brand{
@@ -542,6 +567,11 @@
                         height: 30px;
                         border-radius: 2px;
                         object-fit: cover;
+
+                        @media screen and (max-width:$screen-lg) {
+                            width: 24px;
+                            height: 24px;
+                        }
                     }
 
                     .menu-brand-name{
@@ -556,6 +586,10 @@
                     height: 300px;
                     margin-bottom: 15px;
                     object-fit: cover;
+                    
+                    @media screen and (max-width:$screen-sm) {
+                        height: 150px;
+                    }
                 }
             }
         }
